@@ -56,7 +56,7 @@ def sum_cosines(n):
         cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
@@ -65,14 +65,14 @@ def sum_cosines(n):
     # -------------------------------------------------------------------------
     sum=0
     for k in range(n+1):
-        sum = sum + math.cos(n)
+        sum = sum + math.cos(k)
     return sum
 
 
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this function.
+    # DONE: 4. Implement this function.
     #   It TESTS the  sum_square_roots  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -83,7 +83,21 @@ def run_test_sum_square_roots():
     print('--------------------------------------------------')
     print('Testing the   sum_square_roots   function:')
     print('--------------------------------------------------')
-
+    # Test 1:
+    expected = 27.3028
+    answer = sum_square_roots(9)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+    # Test 2:
+    expected = 454.4142
+    answer = sum_square_roots(61)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+    # Test 3:
+    expected = 4500.1272
+    answer = sum_square_roots(283)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
 
 def sum_square_roots(n):
     """
@@ -106,7 +120,10 @@ def sum_square_roots(n):
     #   No fair running the code of  sum_square_roots  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # -------------------------------------------------------------------------
-
+    sum = 0
+    for k in range(n):
+        sum = sum + math.sqrt((k+1)*2)
+    return sum
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
